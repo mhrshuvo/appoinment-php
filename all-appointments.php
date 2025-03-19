@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// echo "Welcome, " . $_SESSION['email'];
+
 require_once 'config/database.php';
 require_once 'models/Appointment.php';
 
@@ -34,6 +42,19 @@ $icons = [
 ];
 
 $current_icon = isset($_GET['order']) && $_GET['order'] === 'asc' ? $icons['asc'] : $icons['desc'];
+
+$default_sort = 'id';
+$default_order = 'dssc';
+
+// Check if 'sort' or 'order' is missing in the URL
+if (!isset($_GET['sort']) || !isset($_GET['order'])) {
+    $query_string = http_build_query([
+        'sort'  => $_GET['sort'] ?? $default_sort,
+        'order' => $_GET['order'] ?? $default_order
+    ]);
+    header("Location: all-appointments.php?$query_string");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +72,9 @@ $current_icon = isset($_GET['order']) && $_GET['order'] === 'asc' ? $icons['asc'
 <body>
 
     <div class="landing-page">
+
         <?php include './view/components/header.php'; ?>
+        <a href="logout.php">Logout</a>
         <div class="content">
             <div class="custom-container">
                 <table>

@@ -24,9 +24,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<form method="POST">
-    <input type="email" name="email" required placeholder="Enter Email">
-    <input type="password" name="password" required placeholder="Enter Password">
-    <button type="submit">Login</button>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking System</title>
+    <link rel="stylesheet" href="./resources/css/index.css">
+    <link rel="stylesheet" href="./resources/css/login.css">
+</head>
+
+<body>
+    <div class="landing-page">
+        <?php include './view/components/header.php'; ?>
+        <div class="content">
+            <div class="container">
+                <div class="login-box">
+                    <h2>Login</h2>
+                    <form method="POST">
+                        <div class="user-box">
+                            <input type="text" name="email" required>
+                            <label>Email</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="password" name="password" required>
+                            <label>Password</label>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+            <footer>
+                <?php include './view/components/footer.php'; ?>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="form-appointment">
                     <div class="wpcf7" id="wpcf7-f560-p590-o1">
-                        <form action="../controllers/AppointmentController.php" method="POST" class="wpcf7-form">
+                        <form action="controllers/AppointmentController.php" method="POST" class="wpcf7-form">
                             <div class="group">
                                 <div style="width: 48%; float: left;">
                                     <span>

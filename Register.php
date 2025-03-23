@@ -36,10 +36,10 @@ function sendOTP($email, $otp)
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
-        $mail->Host = 'smtp.example.com'; // Replace with SMTP server
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'your-email@example.com'; // Replace with your email
-        $mail->Password = 'your-email-password'; // Replace with your email password
+        $mail->Username = 'your-email@example.com'; 
+        $mail->Password = 'your-email-password'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 

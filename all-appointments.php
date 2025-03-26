@@ -74,7 +74,6 @@ if (!isset($_GET['sort']) || !isset($_GET['order'])) {
     <div class="landing-page">
 
         <?php include './view/components/header.php'; ?>
-        <a href="logout.php">Logout</a>
         <div class="content">
             <div class="custom-container">
                 <table>
